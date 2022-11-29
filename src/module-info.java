@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author soeth
- *
- */
-module Algorithm {
-}
