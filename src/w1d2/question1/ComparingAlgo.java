@@ -3,9 +3,9 @@ package w1d2.question1;
 public class ComparingAlgo {
 	public static void main(String[] args) {
 		System.out.println(findThirdLargest(new int[] { 7, 20, 18, 4, 20, 19, 20, 3 }));
-		//System.out.println(findThirdLargest(new int[] { 7, 18, 4, 20, 19, 20, 3 }));
-		//System.out.println(findThirdLargest(new int[] { 7, 18, 4, 19, 20, 3 }));
-		//System.out.println(findThirdLargest(new int[] { 7, 7, 7, 7}));
+		// System.out.println(findThirdLargest(new int[] { 7, 18, 4, 20, 19, 20, 3 }));
+		// System.out.println(findThirdLargest(new int[] { 7, 18, 4, 19, 20, 3 }));
+		// System.out.println(findThirdLargest(new int[] { 7, 7, 7, 7}));
 	}
 
 	public static int findThirdLargest(int[] a) {
@@ -52,5 +52,27 @@ public class ComparingAlgo {
 		}
 
 		return thirdMax;
+	}
+
+	public static int findThirdLargest2(int[] arr) {
+		int max = 0;
+		int preMax = 0;
+		int prePreMax = 0;
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] > max) {
+				max = arr[i];
+			} else if (arr[i] > preMax && max > arr[i]) {
+				preMax = arr[i];
+			} else if (count == 0 && arr[i] == max) {
+				preMax = arr[i];
+				count++;
+			} else if (preMax > arr[i] && arr[i] > prePreMax) {
+				prePreMax = arr[i];
+			} else if (arr[i] == preMax) {
+				prePreMax = arr[i];
+			}
+		}
+		return prePreMax;
 	}
 }
