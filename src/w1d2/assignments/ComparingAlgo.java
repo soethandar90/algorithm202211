@@ -1,14 +1,14 @@
-package w1d2.question1;
+package w1d2.assignments;
 
 public class ComparingAlgo {
 	public static void main(String[] args) {
-		System.out.println(findThirdLargest(new int[] { 7, 20, 18, 4, 20, 19, 20, 3 }));
+		//System.out.println(findThirdLargest(new int[] { 7, 20, 18, 4, 20, 19, 20, 3 }));
 		// System.out.println(findThirdLargest(new int[] { 7, 18, 4, 20, 19, 20, 3 }));
 		// System.out.println(findThirdLargest(new int[] { 7, 18, 4, 19, 20, 3 }));
 		// System.out.println(findThirdLargest(new int[] { 7, 7, 7, 7}));
 	}
 
-	public static int findThirdLargest(int[] a) {
+	public static int Method1(int[] a) {
 		int max = a[0];
 		int cnt = 1;
 		for (int i = 1; i < a.length; i++) {
@@ -54,7 +54,7 @@ public class ComparingAlgo {
 		return thirdMax;
 	}
 
-	public static int findThirdLargest2(int[] arr) {
+	public static int Method2(int[] arr) {
 		int max = 0;
 		int preMax = 0;
 		int prePreMax = 0;
